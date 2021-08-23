@@ -1,0 +1,11 @@
+.feature-stack {
+    display: flex;
+    .feature-stack-list {
+        display: flex;
+        flex-direction: column;
+        height: 300px;
+        width: 250px;
+        padding: 12px;
+        border: 2px solid black;
+    }
+}

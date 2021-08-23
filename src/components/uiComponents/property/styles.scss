@@ -1,0 +1,8 @@
+.property {
+    display: flex;
+    justify-content: space-between;
+    margin: 4px 0;
+    .property-label {
+        margin-right: 4px;
+    }
+}

@@ -1,0 +1,598 @@
+[
+    {
+        "id": 4,
+        "name": "composite",
+        "label": "Composite",
+        "alias": "comp",
+        "descripton": "",
+        "props": [
+            {
+                "id": 1,
+                "name": "x",
+                "label": "X",
+                "description": "The column offset of the composited image",
+                "alias": "",
+                "type": "int",
+                "required": false,
+                "defaultValue": 0
+            },
+            {
+                "id": 2,
+                "name": "y",
+                "label": "Y",
+                "description": "The row offset of the composited image",
+                "alias": "",
+                "type": "int",
+                "required": false,
+                "defaultValue": ""
+            },
+            {
+                "id": 3,
+                "name": "opacity",
+                "label": "Opacity",
+                "description": "the opacity of the added image value can be between 1-100",
+                "alias": "op",
+                "type": "int",
+                "required": false,
+                "defaultValue": ""
+            },
+            {
+                "id": 4,
+                "name": "compositetype",
+                "label": "Composite Type",
+                "description": "Composite operator",
+                "alias": "ct",
+                "type": "int",
+                "required": false,
+                "defaultValue": 40
+            },
+            {
+                "id": 5,
+                "name": "channel",
+                "label": "Channel",
+                "description": "Provide any channel constant that is valid for your channel mode. To apply to more than one channel, combine channeltype constants using bitwise operators",
+                "alias": "ch",
+                "type": "int",
+                "required": false,
+                "defaultValue": 134217727
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "name": "resize",
+        "label": "Resize",
+        "alias": "re",
+        "descripton": "Changing the image dimensions",
+        "props": [
+            {
+                "id": 1,
+                "name": "height",
+                "label": "Height",
+                "description": "The required height",
+                "alias": "h",
+                "type": "int",
+                "required": true,
+                "defaultValue": ""
+            },
+            {
+                "id": 2,
+                "name": "Width",
+                "label": "Width",
+                "description": "The required width",
+                "alias": "w",
+                "type": "int",
+                "required": true,
+                "defaultValue": ""
+            },
+            {
+                "id": 3,
+                "name": "Blur",
+                "label": "Blur",
+                "description": "The blur factor where > 1 is blurry, < 1 is sharp. Only relevant if we resizing to a smaller size",
+                "alias": "b",
+                "type": "float",
+                "required": false,
+                "defaultValue": ""
+            },
+            {
+                "id": 4,
+                "name": "filterType",
+                "label": "Filter Type",
+                "description": "Refer to the list of filter constants. https://www.php.net/manual/en/imagick.constants.php#imagick.constants.filters Only relevant if we resizing to a smaller size",
+                "alias": "ft",
+                "type": "int",
+                "required": false,
+                "defaultValue": 22
+            },
+            {
+                "id": 5,
+                "name": "bestFit",
+                "label": "Best Fit",
+                "description": "Optional fit parameter",
+                "alias": "bf",
+                "type": "bool",
+                "required": false,
+                "defaultValue": false
+            },
+            {
+                "id": 6,
+                "name": "compositeFit",
+                "label": "Composite Fit",
+                "description": "Trying to scale the image to the previous tranformationStep image",
+                "alias": "cf",
+                "type": "bool",
+                "required": false,
+                "defaultValue": false
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "name": "crop",
+        "label": "Crop",
+        "alias": "c",
+        "descripton": "Crop the image into a smaller one",
+        "props": [
+            {
+                "id": 1,
+                "name": "height",
+                "label": "Height",
+                "description": "The required height",
+                "alias": "h",
+                "type": "int",
+                "required": true,
+                "defaultValue": ""
+            },
+            {
+                "id": 2,
+                "name": "width",
+                "label": "Width",
+                "description": "The required width",
+                "alias": "w",
+                "type": "int",
+                "required": true,
+                "defaultValue": ""
+            },
+            {
+                "id": 3,
+                "name": "blur",
+                "label": "Blur",
+                "description": "The blur factor where > 1 is blurry, < 1 is sharp. Only relevant if we resizing to a smaller size",
+                "alias": "b",
+                "type": "float",
+                "required": false,
+                "defaultValue": ""
+            },
+            {
+                "id": 4,
+                "name": "filterType",
+                "label": "Filter Type",
+                "description": "Refer to the list of filter constants. https://www.php.net/manual/en/imagick.constants.php#imagick.constants.filters Only relevant if we resizing to a smaller size",
+                "alias": "ft",
+                "type": "int",
+                "required": false,
+                "defaultValue": ""
+            },
+            {
+                "id": 5,
+                "name": "bestFit",
+                "label": "BestFit",
+                "description": "Optional fit parameter",
+                "alias": "bf",
+                "type": "bool",
+                "required": false,
+                "defaultValue": false
+            },
+            {
+                "id": 6,
+                "name": "compositeFit",
+                "label": "Composite Fit",
+                "description": "Trying to scale the image to the previous tranformationStep image",
+                "alias": "cf",
+                "type": "bool",
+                "required": false,
+                "defaultValue": false
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "name": "roundcorners",
+        "label": "Round Corners",
+        "alias": "rc",
+        "descripton": "Rounding the corners",
+        "props": [
+            {
+                "id": 1,
+                "name": "xRounding",
+                "label": "X rounding",
+                "description": "X rounding",
+                "alias": ["x", "xr"],
+                "type": "float",
+                "required": true,
+                "defaultValue": ""
+            },
+            {
+                "id": 2,
+                "name": "yRounding",
+                "label": "Y rounding",
+                "description": "Y rounding",
+                "alias": ["y", "yr"],
+                "type": "float",
+                "required": true,
+                "defaultValue": ""
+            },
+            {
+                "id": 3,
+                "name": "strokeWidth",
+                "label": "Stroke Width",
+                "description": "Stroke width",
+                "alias": "sw",
+                "type": "float",
+                "required": false,
+                "defaultValue": 10
+            },
+            {
+                "id": 4,
+                "name": "displace",
+                "label": "Displace",
+                "description": "Image displace",
+                "alias": "d",
+                "type": "float",
+                "required": false,
+                "defaultValue": 5
+            },
+            {
+                "id": 5,
+                "name": "sizeCorrection",
+                "label": "Size Correction",
+                "description": "Size correction",
+                "alias": "sc",
+                "type": "float",
+                "required": false,
+                "defaultValue": -6
+            },
+            {
+                "id": 6,
+                "name": "backgroundColor",
+                "label": "Background Color",
+                "description": "Color for the corners",
+                "alias": "bg",
+                "type": "color",
+                "required": false,
+                "defaultValue": "black"
+            }
+        ]
+    },
+    {
+        "id": 7,
+        "name": "rotate",
+        "label": "Rotate",
+        "alias": "r",
+        "descripton": "Rotating the image",
+        "props": [
+            {
+                "id": 1,
+                "name": "degrees",
+                "label": "Degrees",
+                "description": "Degrees to turn",
+                "alias": ["d", "deg"],
+                "type": "int",
+                "required": true,
+                "defaultValue": ""
+            },
+            {
+                "id": 2,
+                "name": "backgroundColor",
+                "label": "Background Color",
+                "description": "Color to fill empty space created by the rotation color string without # like 'fff or fixed names like 'red, 'blue",
+                "alias": ["b", "bg"],
+                "type": "color",
+                "required": true,
+                "defaultValue": "black"
+            }
+        ]
+    },
+    {
+        "id": 1,
+        "name": "text",
+        "label": "Text",
+        "alias": "text",
+        "descripton": "Adding a text on the image",
+        "props": [
+            {
+                "id": 1,
+                "name": "text",
+                "label": "Text",
+                "description": "The text, it must be URL encoded",
+                "alias": "t",
+                "type": "string",
+                "required": true,
+                "defaultValue": ""
+            },
+            {
+                "id": 7,
+                "name": "font",
+                "label": "Font",
+                "description": "Name of the font case sensitive",
+                "alias": "f",
+                "type": "select",
+                "required": false,
+                "defaultValue": "Courier",
+                "props": {
+                    "options": [
+                        "AvantGarde-Book",
+                        "AvantGarde-BookOblique",
+                        "AvantGarde-Demi",
+                        "AvantGarde-DemiOblique",
+                        "Bookman-Demi",
+                        "Bookman-DemiItalic",
+                        "Bookman-Light",
+                        "Bookman-LightItalic",
+                        "Courier",
+                        "Courier-Bold",
+                        "Courier-BoldOblique",
+                        "Courier-Oblique,",
+                        "fixed",
+                        "Helvetica",
+                        "Helvetica-Bold",
+                        "Helvetica-BoldOblique",
+                        "Helvetica-Narrow",
+                        "Helvetica-Narrow-Bold",
+                        "Helvetica-Narrow-BoldOblique",
+                        "Helvetica-Narrow-Oblique",
+                        "Helvetica-Oblique",
+                        "NewCenturySchlbk-Bold",
+                        "NewCenturySchlbk-BoldItalic",
+                        "NewCenturySchlbk-Italic",
+                        "NewCenturySchlbk-Roman",
+                        "Palatino-Bold",
+                        "Palatino-BoldItalic",
+                        "Palatino-Italic",
+                        "Palatino-Roman",
+                        "Symbol",
+                        "Times-Bold",
+                        "Times-BoldItalic",
+                        "Times-Italic",
+                        "Times-Roman",
+                        "DejaVu-Sans-Bold",
+                        "DejaVu-Sans-Mono-Bold",
+                        "DejaVu-Serif-Bold",
+                        "symbol"
+                    ]
+                }
+            },
+            {
+                "id": 2,
+                "name": "fontSize",
+                "label": "Font Size",
+                "description": "The font size",
+                "alias": "fs",
+                "type": "float",
+                "required": false,
+                "defaultValue": 10
+            },
+            {
+                "id": 8,
+                "name": "strokeWidth",
+                "label": "Stroke Width",
+                "description": "",
+                "alias": "sw",
+                "type": "float",
+                "required": false,
+                "defaultValue": 1
+            },
+            {
+                "id": 3,
+                "name": "x",
+                "label": "X",
+                "description": "Horizontal offset in pixels to the left of the text",
+                "alias": null,
+                "type": "int",
+                "required": false,
+                "defaultValue": 0
+            },
+            {
+                "id": 4,
+                "name": "y",
+                "label": "Y",
+                "description": "Vertical offset in pixels to the baseline of the text",
+                "alias": null,
+                "type": "int",
+                "required": false,
+                "defaultValue": 0
+            },
+            {
+                "id": 9,
+                "name": "angle",
+                "label": "Angle",
+                "description": "The angle to write the text",
+                "alias": "a",
+                "type": "float",
+                "required": false,
+                "defaultValue": 0
+            },
+            {
+                "id": 10,
+                "name": "maxHeight",
+                "label": "Max Height",
+                "description": "If you want to limit the textbox",
+                "alias": "mh",
+                "type": "int",
+                "required": false,
+                "defaultValue": ""
+            },
+            {
+                "id": 11,
+                "name": "maxWidth",
+                "label": "Max Width",
+                "description": "If you want to limit the textbox, it will try to word warp",
+                "alias": "mw",
+                "type": "int",
+                "required": false,
+                "defaultValue": ""
+            },
+            {
+                "id": 5,
+                "name": "strokeColor",
+                "label": "Stroke color",
+                "description": "",
+                "alias": "sc",
+                "type": "color",
+                "required": false,
+                "defaultValue": "black"
+            },
+            {
+                "id": 6,
+                "name": "fillColor",
+                "label": "Fill color",
+                "description": "",
+                "alias": "fc",
+                "type": "color",
+                "required": false,
+                "defaultValue": "black"
+            }
+        ]
+    },
+    {
+        "id": 8,
+        "name": "filter",
+        "label": "Filter",
+        "alias": "f",
+        "descripton": "Applying predefined filters on the image",
+        "props": [
+            {
+                "id": 1,
+                "name": "filterType",
+                "label": "Filter Type",
+                "description": "The desired filter",
+                "alias": ["f", "ft"],
+                "type": "string",
+                "required": true,
+                "defaultValue": ""
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "name": "imageTextureText",
+        "label": "Texture text",
+        "descripton": "Creating a text with thumbnail image as texture",
+        "alias": "itt",
+        "props": [
+            {
+                "id": 1,
+                "name": "text",
+                "label": "Text",
+                "description": "The text, it must be URL encoded",
+                "alias": ["t", "txt"],
+                "type": "string",
+                "required": true,
+                "defaultValue": ""
+            },
+            {
+                "id": 2,
+                "name": "font",
+                "label": "Font",
+                "description": "Name of the font case sensitive",
+                "alias": "f",
+                "type": "select",
+                "required": false,
+                "defaultValue": "Courier",
+                "props": {
+                    "options": [
+                        "AvantGarde-Book",
+                        "AvantGarde-BookOblique",
+                        "AvantGarde-Demi",
+                        "AvantGarde-DemiOblique",
+                        "Bookman-Demi",
+                        "Bookman-DemiItalic",
+                        "Bookman-Light",
+                        "Bookman-LightItalic",
+                        "Courier",
+                        "Courier-Bold",
+                        "Courier-BoldOblique",
+                        "Courier-Oblique,",
+                        "fixed",
+                        "Helvetica",
+                        "Helvetica-Bold",
+                        "Helvetica-BoldOblique",
+                        "Helvetica-Narrow",
+                        "Helvetica-Narrow-Bold",
+                        "Helvetica-Narrow-BoldOblique",
+                        "Helvetica-Narrow-Oblique",
+                        "Helvetica-Oblique",
+                        "NewCenturySchlbk-Bold",
+                        "NewCenturySchlbk-BoldItalic",
+                        "NewCenturySchlbk-Italic",
+                        "NewCenturySchlbk-Roman",
+                        "Palatino-Bold",
+                        "Palatino-BoldItalic",
+                        "Palatino-Italic",
+                        "Palatino-Roman",
+                        "Symbol",
+                        "Times-Bold",
+                        "Times-BoldItalic",
+                        "Times-Italic",
+                        "Times-Roman",
+                        "DejaVu-Sans-Bold",
+                        "DejaVu-Sans-Mono-Bold",
+                        "DejaVu-Serif-Bold",
+                        "symbol"
+                    ]
+                }
+            },
+            {
+                "id": 3,
+                "name": "fontSize",
+                "label": "Font Size",
+                "description": "The font size",
+                "alias": "fs",
+                "type": "float",
+                "required": false,
+                "defaultValue": 10
+            },
+            {
+                "id": 4,
+                "name": "strokeWidth",
+                "label": "Stroke Width",
+                "description": "Stroke width",
+                "alias": "sw",
+                "type": "float",
+                "required": false,
+                "defaultValue": 1
+            },
+            {
+                "id": 5,
+                "name": "x",
+                "label": "X",
+                "description": "Horizontal offset in pixels to the left of the text",
+                "alias": null,
+                "type": "int",
+                "required": false,
+                "defaultValue": 0
+            },
+            {
+                "id": 6,
+                "name": "y",
+                "label": "Y",
+                "description": "Vertical offset in pixels to the baseline of the text",
+                "alias": null,
+                "type": "int",
+                "required": false,
+                "defaultValue": 10
+            },
+            {
+                "id": 7,
+                "name": "angle",
+                "label": "Angle",
+                "description": "The angle to write the text",
+                "alias": "a",
+                "type": "float",
+                "required": false,
+                "defaultValue": 0
+            }
+        ]
+    }
+]

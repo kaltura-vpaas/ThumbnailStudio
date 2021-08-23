@@ -1,0 +1,169 @@
+[
+    {
+        "id": 1,
+        "name": "vidsec",
+        "label": "VidSec",
+        "alias": "vsec",
+        "description": "Picking a frame from a video by second",
+        "props": [
+            {
+                "id": 1,
+                "name": "second",
+                "label": "Second",
+                "description": "The time to snap a frame from the video",
+                "alias": ["s", "sec"],
+                "type": "float",
+                "required": false,
+                "defaultValue": ""
+            },
+            {
+                "id": 2,
+                "name": "Height",
+                "label": "Height",
+                "description": "Requested height in pixels",
+                "alias": "h",
+                "type": "int",
+                "required": false,
+                "defaultValue": ""
+            },
+            {
+                "id": 3,
+                "name": "Width",
+                "label": "Width",
+                "description": "Requested width in pixels",
+                "alias": "w",
+                "type": "int",
+                "required": false,
+                "defaultValue": 0
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "name": "vidSlice",
+        "label": "Vid Slice",
+        "alias": "vslice",
+        "description": "Picking a frame by dividing the video into slices and then pick the slice",
+        "props": [
+            {
+                "id": 1,
+                "name": "numberofslices",
+                "label": "Number Of Slices",
+                "description": "Number of slices to split the video",
+                "alias": "nos",
+                "type": "int",
+                "required": true,
+                "defaultValue": ""
+            },
+            {
+                "id": 2,
+                "name": "sliceNumber",
+                "label": "Slice Number",
+                "description": "Number of slice out of slices",
+                "alias": "sn",
+                "type": "int",
+                "required": true,
+                "defaultValue": ""
+            },
+            {
+                "id": 3,
+                "name": "Height",
+                "label": "Height",
+                "description": "Requested height in pixels",
+                "alias": "h",
+                "type": "int",
+                "required": false,
+                "defaultValue": ""
+            },
+            {
+                "id": 4,
+                "name": "width",
+                "label": "Width",
+                "description": "Requested width in pixels",
+                "alias": "w",
+                "type": "int",
+                "required": false,
+                "defaultValue": ""
+            },
+            {
+                "id": 5,
+                "name": "startSec",
+                "label": "Start Sec",
+                "description": "The second (or part of second) to begin extracting the slices stripe from (e.g. to avoid black frame in videos that begin with fade to black, set start_sec to the second that is after the black transition).",
+                "alias": "ss",
+                "type": "float",
+                "required": false,
+                "defaultValue": 0
+            },
+            {
+                "id": 6,
+                "name": "endSec",
+                "label": "End Sec",
+                "description": "The second (or part of second) to stop extracting slices at (e.g. to create a stripe animation that is smooth but only contains few frames, use this parameter to only extract a short segment of your video instead of extracting slices across the entire video",
+                "alias": "es",
+                "type": "float",
+                "required": false,
+                "defaultValue": ""
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "name": "vidStrip",
+        "label": "VidStrip",
+        "alias": "vstrip",
+        "description": "Splitting the video into slices and glue them into one image",
+        "props": [
+            {
+                "id": 1,
+                "name": "numberofslices",
+                "label": "Number Of Slices",
+                "description": "the number of slices to split the video",
+                "alias": "nos",
+                "type": "int",
+                "required": true,
+                "defaultValue": ""
+            },
+            {
+                "id": 2,
+                "name": "Height",
+                "label": "Height",
+                "description": "Requested height in pixels",
+                "alias": "h",
+                "type": "int",
+                "required": false,
+                "defaultValue": ""
+            },
+            {
+                "id": 3,
+                "name": "width",
+                "label": "Width",
+                "description": "Requested width in pixels",
+                "alias": "w",
+                "type": "int",
+                "required": false,
+                "defaultValue": ""
+            },
+            {
+                "id": 4,
+                "name": "startSec",
+                "label": "Start Sec",
+                "description": "The second (or part of second) to begin extracting the slices stripe from (e.g. to avoid black frame in videos that begin with fade to black, set start_sec to the second that is after the black transition).",
+                "alias": "ss",
+                "type": "float",
+                "required": false,
+                "defaultValue": 0
+            },
+            {
+                "id": 5,
+                "name": "endSec",
+                "label": "End Sec",
+                "description": "The second (or part of second) to stop extracting slices at (e.g. to create a stripe animation that is smooth but only contains few frames, use this parameter to only extract a short segment of your video instead of extracting slices across the entire video",
+                "alias": "es",
+                "type": "float",
+                "required": false,
+                "defaultValue": ""
+            }
+        ]
+    }
+]
