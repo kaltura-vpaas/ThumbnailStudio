@@ -18,7 +18,7 @@
             },
             {
                 "id": 2,
-                "name": "Height",
+                "name": "height",
                 "label": "Height",
                 "description": "Requested height in pixels",
                 "alias": "h",
@@ -28,7 +28,7 @@
             },
             {
                 "id": 3,
-                "name": "Width",
+                "name": "width",
                 "label": "Width",
                 "description": "Requested width in pixels",
                 "alias": "w",
@@ -67,7 +67,7 @@
             },
             {
                 "id": 3,
-                "name": "Height",
+                "name": "height",
                 "label": "Height",
                 "description": "Requested height in pixels",
                 "alias": "h",
@@ -126,7 +126,7 @@
             },
             {
                 "id": 2,
-                "name": "Height",
+                "name": "height",
                 "label": "Height",
                 "description": "Requested height in pixels",
                 "alias": "h",

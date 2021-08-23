@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import Preview from "./Preview";
-import { makePreviewUrl } from "./modules/selectors";
+import { makePreviewUrl,makeLongUrl } from "./modules/selectors";
 
 const mapStateToProps = (state: any) => ({
   url: makePreviewUrl(state),

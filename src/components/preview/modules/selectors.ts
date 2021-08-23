@@ -35,12 +35,51 @@ const addPropertyToUrl = (props: []) => {
   return url;
 };
 
+
+const longAddPropertyToUrl = (props: []) => {
+  let url = "";
+  forEach(props, (property: any) => {
+    const value = getValue(property);
+    if (value) {
+      url = url + `_${property.name}-${value}`;
+    }
+  });
+  return url;
+};
+
 export const getServiceUrl = createSelector(
   [getKs, getPartnerId],
   (ks, partnerId) => {
     return `${baseApi}${apiVersion}/service/thumbnail_thumbnail${
       ks ? `/ks/${ks}` : ""
     }${partnerId ? `/p/${partnerId}` : ""}/action/transform/transformString`;
+  }
+);
+
+export const makeLongUrl = createSelector(
+  [getServiceUrl, featureStackList, featurePropsState, getInstancePropsState],
+  (serviceUrl, fs, fp, ip) => {
+    let url = `${serviceUrl}/`;
+    let iteration = 0;
+    forEach(ip, (instance: any) => {
+      const sourceAction = instance.sourceAction;
+      if (isEmpty(instance.entryId)) {
+        return true;
+      }
+      url = url + `${iteration > 0 ? "+" : ""}id-${instance.entryId}`;
+      if (!isEmpty(sourceAction)) {
+        console.log(sourceAction);
+        url = url + `,${sourceAction.name}`;
+        url = url + longAddPropertyToUrl(sourceAction.props);
+      }
+      const filteredFeatures = filter(fs, ["instanceId", instance.id]);
+      forEach(filteredFeatures, (feature: any) => {
+        url = url + `,${feature.name}`;
+        url = url + longAddPropertyToUrl(fp[feature.uniqId] || []);
+      });
+      iteration++;
+    });
+    return url;
   }
 );
 

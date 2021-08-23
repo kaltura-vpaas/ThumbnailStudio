@@ -77,7 +77,7 @@
             },
             {
                 "id": 2,
-                "name": "Width",
+                "name": "width",
                 "label": "Width",
                 "description": "The required width",
                 "alias": "w",
@@ -87,7 +87,7 @@
             },
             {
                 "id": 3,
-                "name": "Blur",
+                "name": "blur",
                 "label": "Blur",
                 "description": "The blur factor where > 1 is blurry, < 1 is sharp. Only relevant if we resizing to a smaller size",
                 "alias": "b",

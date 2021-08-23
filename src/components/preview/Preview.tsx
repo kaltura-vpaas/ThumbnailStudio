@@ -16,13 +16,15 @@ interface Props {
 class Preview extends Component<Props> {
   state = {
     url: "",
+    longUrl:"",
     blob: null,
     errorText: ""
   };
   static getDerivedStateFromProps(nextProps: any, prevState: any) {
     if (nextProps.url !== prevState.url) {
       return {
-        url: nextProps.url
+        url: nextProps.url,
+        longUrl:nextProps.longUrl
       };
     }
     return null;
@@ -78,7 +80,7 @@ class Preview extends Component<Props> {
     return <span className="error-message">{this.state.errorText}</span>;
   };
   render() {
-    const { url, blob } = this.state;
+    const { url,longUrl, blob } = this.state;
     if (!url || !blob) {
       return null;
     }
@@ -96,6 +98,8 @@ class Preview extends Component<Props> {
         {preview}
         {responseType === responseTypes.image && (
           <span className="url">{url}</span>
+        )}
+        {responseType === responseTypes.image && (
           <span className="url">{longUrl}</span>
         )}
         
