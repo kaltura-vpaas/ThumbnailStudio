@@ -27,10 +27,10 @@ class Property extends Component<Props> {
     }
     return (
       <div className="property">
-        <span className="property-label">{label}<a className="">
-          <i className="">j</i>
-        </a></span>
-        
+        <span className="property-label">{label}
+          <a href="#" className="tooltip" title={description}></a>
+        </span>
+
         <PropertyComponent
           value={value}
           onChange={this.handleOnChange}
