@@ -10,6 +10,8 @@ interface Props {
 
 class CheckBox extends Component<Props> {
   onChange = (e: any) => {
+    console.log("here");
+    console.log(e.target);
     this.props.onChange(e.target.checked);
   };
   render() {

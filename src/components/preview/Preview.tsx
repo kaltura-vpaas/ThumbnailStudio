@@ -96,11 +96,15 @@ class Preview extends Component<Props> {
       <div className="preview">
         <span className="section-label">Live Preview</span>
         {preview}
+        <br/>
+        Short:
         {responseType === responseTypes.image && (
-          <span className="url">{url}</span>
+          <span className="url"><a href={url}>{url}</a></span>
         )}
+        <br/>
+        Long:
         {responseType === responseTypes.image && (
-          <span className="url">{longUrl}</span>
+          <span className="url"><a href={longUrl}>{longUrl}</a></span>
         )}
         
       </div>

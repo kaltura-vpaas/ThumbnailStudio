@@ -6,7 +6,7 @@ import { getKs, getPartnerId } from "../../appConfig/modules/selectors";
 import forEach from "lodash/forEach";
 import isArray from "lodash/isArray";
 import filter from "lodash/filter";
-import isEmpty from "lodash/isEmpty";
+import isEmpty from "lodash/isEmpty"; 
 
 const baseApi = "https://www.kaltura.com";
 const apiVersion = "/api_v3";
@@ -17,26 +17,30 @@ const getAliasOrName = (property: { alias: any; name: string }) => {
     : property.alias || property.name;
 };
 
-const getValue = (property: { value?: any; defaultValue?: any }) => {
-  if (property.value == property.defaultValue || isEmpty(property.value)) { // eslint-disable-line
+const getValue = (property: { value?: any; defaultValue?: any; type?: any }) => {
+  if (property.value == property.defaultValue) { // eslint-disable-line
+    if (property.type === 'string') {
+      if (isEmpty(property.value)) {
+        return "";
+      } else {
+        return property.value;
+      }
+    }
     return "";
   }
   return property.value;
 };
 
-const addPropertyToUrl = (props: []) => {
-  let url = "";
-  forEach(props, (property: any) => {
-    const value = getValue(property);
-    if (value) {
-      url = url + `_${getAliasOrName(property)}-${value}`;
-    }
-  });
-  return url;
-};
-
+export const getServiceUrl = createSelector(
+  [getKs, getPartnerId],
+  (ks, partnerId) => {
+    return `${baseApi}${apiVersion}/service/thumbnail_thumbnail${ks ? `/ks/${ks}` : ""
+      }${partnerId ? `/p/${partnerId}` : ""}/action/transform/transformString`;
+  }
+);
 
 const longAddPropertyToUrl = (props: []) => {
+
   let url = "";
   forEach(props, (property: any) => {
     const value = getValue(property);
@@ -46,15 +50,6 @@ const longAddPropertyToUrl = (props: []) => {
   });
   return url;
 };
-
-export const getServiceUrl = createSelector(
-  [getKs, getPartnerId],
-  (ks, partnerId) => {
-    return `${baseApi}${apiVersion}/service/thumbnail_thumbnail${
-      ks ? `/ks/${ks}` : ""
-    }${partnerId ? `/p/${partnerId}` : ""}/action/transform/transformString`;
-  }
-);
 
 export const makeLongUrl = createSelector(
   [getServiceUrl, featureStackList, featurePropsState, getInstancePropsState],
@@ -68,7 +63,6 @@ export const makeLongUrl = createSelector(
       }
       url = url + `${iteration > 0 ? "+" : ""}id-${instance.entryId}`;
       if (!isEmpty(sourceAction)) {
-        console.log(sourceAction);
         url = url + `,${sourceAction.name}`;
         url = url + longAddPropertyToUrl(sourceAction.props);
       }
@@ -82,6 +76,17 @@ export const makeLongUrl = createSelector(
     return url;
   }
 );
+
+const addPropertyToUrl = (props: []) => {
+  let url = "";
+  forEach(props, (property: any) => {
+    const value = getValue(property);
+    if (value) {
+      url = url + `_${getAliasOrName(property)}-${value}`;
+    }
+  });
+  return url;
+};
 
 export const makePreviewUrl = createSelector(
   [getServiceUrl, featureStackList, featurePropsState, getInstancePropsState],

@@ -1,65 +1,65 @@
 [
     {
-        "id": 4,
-        "name": "composite",
-        "label": "Composite",
-        "alias": "comp",
-        "descripton": "",
+        "id": 1,
+        "name": "crop",
+        "label": "Crop",
+        "alias": "c",
+        "descripton": "Crop the image into a smaller one",
         "props": [
             {
                 "id": 1,
-                "name": "x",
-                "label": "X",
-                "description": "The column offset of the composited image",
-                "alias": "",
+                "name": "height",
+                "label": "Height",
+                "description": "The required height",
+                "alias": "h",
                 "type": "int",
-                "required": false,
-                "defaultValue": 0
+                "required": true,
+                "defaultValue": ""
             },
             {
                 "id": 2,
-                "name": "y",
-                "label": "Y",
-                "description": "The row offset of the composited image",
-                "alias": "",
+                "name": "width",
+                "label": "Width",
+                "description": "The required width",
+                "alias": "w",
                 "type": "int",
-                "required": false,
+                "required": true,
                 "defaultValue": ""
             },
             {
                 "id": 3,
-                "name": "opacity",
-                "label": "Opacity",
-                "description": "the opacity of the added image value can be between 1-100",
-                "alias": "op",
+                "name": "x",
+                "label": "x",
+                "description": "crop to start from specific x coordinate",
+                "alias": "",
                 "type": "int",
                 "required": false,
                 "defaultValue": ""
             },
             {
                 "id": 4,
-                "name": "compositetype",
-                "label": "Composite Type",
-                "description": "Composite operator",
-                "alias": "ct",
+                "name": "y",
+                "label": "y",
+                "description": "crop to start from specific y coordinate",
+                "alias": "",
                 "type": "int",
                 "required": false,
-                "defaultValue": 40
+                "defaultValue": ""
             },
             {
                 "id": 5,
-                "name": "channel",
-                "label": "Channel",
-                "description": "Provide any channel constant that is valid for your channel mode. To apply to more than one channel, combine channeltype constants using bitwise operators",
-                "alias": "ch",
+                "name": "gravityPoint",
+                "label": "Gravity Point",
+                "description": "The gravity point to crop the image to",
+                "alias": "gp",
                 "type": "int",
                 "required": false,
-                "defaultValue": 134217727
+                "defaultValue": ""
             }
         ]
     },
     {
-        "id": 3,
+        "id": 2,
         "name": "resize",
         "label": "Resize",
         "alias": "re",
@@ -128,76 +128,7 @@
         ]
     },
     {
-        "id": 5,
-        "name": "crop",
-        "label": "Crop",
-        "alias": "c",
-        "descripton": "Crop the image into a smaller one",
-        "props": [
-            {
-                "id": 1,
-                "name": "height",
-                "label": "Height",
-                "description": "The required height",
-                "alias": "h",
-                "type": "int",
-                "required": true,
-                "defaultValue": ""
-            },
-            {
-                "id": 2,
-                "name": "width",
-                "label": "Width",
-                "description": "The required width",
-                "alias": "w",
-                "type": "int",
-                "required": true,
-                "defaultValue": ""
-            },
-            {
-                "id": 3,
-                "name": "blur",
-                "label": "Blur",
-                "description": "The blur factor where > 1 is blurry, < 1 is sharp. Only relevant if we resizing to a smaller size",
-                "alias": "b",
-                "type": "float",
-                "required": false,
-                "defaultValue": ""
-            },
-            {
-                "id": 4,
-                "name": "filterType",
-                "label": "Filter Type",
-                "description": "Refer to the list of filter constants. https://www.php.net/manual/en/imagick.constants.php#imagick.constants.filters Only relevant if we resizing to a smaller size",
-                "alias": "ft",
-                "type": "int",
-                "required": false,
-                "defaultValue": ""
-            },
-            {
-                "id": 5,
-                "name": "bestFit",
-                "label": "BestFit",
-                "description": "Optional fit parameter",
-                "alias": "bf",
-                "type": "bool",
-                "required": false,
-                "defaultValue": false
-            },
-            {
-                "id": 6,
-                "name": "compositeFit",
-                "label": "Composite Fit",
-                "description": "Trying to scale the image to the previous tranformationStep image",
-                "alias": "cf",
-                "type": "bool",
-                "required": false,
-                "defaultValue": false
-            }
-        ]
-    },
-    {
-        "id": 6,
+        "id": 3,
         "name": "roundcorners",
         "label": "Round Corners",
         "alias": "rc",
@@ -208,7 +139,10 @@
                 "name": "xRounding",
                 "label": "X rounding",
                 "description": "X rounding",
-                "alias": ["x", "xr"],
+                "alias": [
+                    "x",
+                    "xr"
+                ],
                 "type": "float",
                 "required": true,
                 "defaultValue": ""
@@ -218,7 +152,10 @@
                 "name": "yRounding",
                 "label": "Y rounding",
                 "description": "Y rounding",
-                "alias": ["y", "yr"],
+                "alias": [
+                    "y",
+                    "yr"
+                ],
                 "type": "float",
                 "required": true,
                 "defaultValue": ""
@@ -266,7 +203,7 @@
         ]
     },
     {
-        "id": 7,
+        "id": 4,
         "name": "rotate",
         "label": "Rotate",
         "alias": "r",
@@ -277,7 +214,10 @@
                 "name": "degrees",
                 "label": "Degrees",
                 "description": "Degrees to turn",
-                "alias": ["d", "deg"],
+                "alias": [
+                    "d",
+                    "deg"
+                ],
                 "type": "int",
                 "required": true,
                 "defaultValue": ""
@@ -287,7 +227,10 @@
                 "name": "backgroundColor",
                 "label": "Background Color",
                 "description": "Color to fill empty space created by the rotation color string without # like 'fff or fixed names like 'red, 'blue",
-                "alias": ["b", "bg"],
+                "alias": [
+                    "b",
+                    "bg"
+                ],
                 "type": "color",
                 "required": true,
                 "defaultValue": "black"
@@ -295,7 +238,7 @@
         ]
     },
     {
-        "id": 1,
+        "id": 5,
         "name": "text",
         "label": "Text",
         "alias": "text",
@@ -456,7 +399,7 @@
         ]
     },
     {
-        "id": 8,
+        "id": 6,
         "name": "filter",
         "label": "Filter",
         "alias": "f",
@@ -466,16 +409,34 @@
                 "id": 1,
                 "name": "filterType",
                 "label": "Filter Type",
-                "description": "The desired filter",
-                "alias": ["f", "ft"],
-                "type": "string",
+                "description": "The desired filter.",
+                "alias": [
+                    "f",
+                    "ft"
+                ],
+                "type": "select",
                 "required": true,
-                "defaultValue": ""
+                "defaultValue": "",
+                "props": {
+                    "options": [
+                        "blueshift",
+                        "charcoal",
+                        "contrast",
+                        "edge",
+                        "oil",
+                        "polaroid",
+                        "raise",
+                        "sepia",
+                        "shade",
+                        "solarize",
+                        "vignette",
+                        "wave" ]
+                }
             }
         ]
     },
     {
-        "id": 2,
+        "id": 7,
         "name": "imageTextureText",
         "label": "Texture text",
         "descripton": "Creating a text with thumbnail image as texture",
@@ -486,7 +447,10 @@
                 "name": "text",
                 "label": "Text",
                 "description": "The text, it must be URL encoded",
-                "alias": ["t", "txt"],
+                "alias": [
+                    "t",
+                    "txt"
+                ],
                 "type": "string",
                 "required": true,
                 "defaultValue": ""
@@ -592,6 +556,65 @@
                 "type": "float",
                 "required": false,
                 "defaultValue": 0
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "name": "composite",
+        "label": "Composite",
+        "alias": "comp",
+        "descripton": "",
+        "props": [
+            {
+                "id": 1,
+                "name": "x",
+                "label": "X",
+                "description": "The column offset of the composited image",
+                "alias": "",
+                "type": "int",
+                "required": false,
+                "defaultValue": 0
+            },
+            {
+                "id": 2,
+                "name": "y",
+                "label": "Y",
+                "description": "The row offset of the composited image",
+                "alias": "",
+                "type": "int",
+                "required": false,
+                "defaultValue": ""
+            },
+            {
+                "id": 3,
+                "name": "opacity",
+                "label": "Opacity",
+                "description": "the opacity of the added image value can be between 1-100",
+                "alias": "op",
+                "type": "int",
+                "required": false,
+                "defaultValue": ""
+            },
+            {
+                "id": 4,
+                "name": "compositetype",
+                "label": "Composite Type",
+                "description": "Composite operator",
+                "alias": "ct",
+                "type": "int",
+                "required": false,
+                "defaultValue": 40
+            },
+            {
+                "id": 5,
+                "name": "channel",
+                "label": "Channel",
+                "description": "Provide any channel constant that is valid for your channel mode. To apply to more than one channel, combine channeltype constants using bitwise operators",
+                "alias": "ch",
+                "type": "int",
+                "required": false,
+                "defaultValue": 134217727
             }
         ]
     }
