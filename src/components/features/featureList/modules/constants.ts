@@ -1,6 +1,6 @@
 export const key = "features";
 
-export default {
+ const featureconf = {
   SET_LIST: `${key}.SET_LIST`,
 
   FETCH_LIST_REQUEST: `${key}.FETCH_LIST_REQUEST`,
@@ -10,3 +10,5 @@ export default {
   SET_SELECTED_FEATURE: `${key}.SET_SELECTED_FEATURE`,
   CLEAR_SELECTED_FEATURE: `${key}.CLEAR_SELECTED_FEATURE`
 };
+
+export default featureconf;

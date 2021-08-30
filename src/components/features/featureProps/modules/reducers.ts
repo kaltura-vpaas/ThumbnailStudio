@@ -7,7 +7,7 @@ import constants from "./constants";
 
 const initialState = {};
 
-export default (state = initialState, action: any) => {
+const featstate = (state = initialState, action: any) => {
   switch (action.type) {
     case constants.SET_FEATURE_PROPERTY:
       return {
@@ -25,3 +25,5 @@ export default (state = initialState, action: any) => {
       return state;
   }
 };
+
+export default featstate;

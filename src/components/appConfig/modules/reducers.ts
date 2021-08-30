@@ -9,7 +9,7 @@ const initialState = {
   partnerId: ""
 };
 
-export default (state = initialState, action: any) => {
+ const redstate = (state = initialState, action: any) => {
   switch (action.type) {
     case constants.SET_KS:
       return {
@@ -25,3 +25,5 @@ export default (state = initialState, action: any) => {
       return state;
   }
 };
+
+export default redstate;

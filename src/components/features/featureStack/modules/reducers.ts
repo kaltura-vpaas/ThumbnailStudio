@@ -11,7 +11,7 @@ const initialState: State = {
   featureList: []
 };
 
-export default (state: State = initialState, action: any) => {
+const stackreduce =  (state: State = initialState, action: any) => {
   switch (action.type) {
     case constants.SET_LIST:
       return {
@@ -44,3 +44,5 @@ export default (state: State = initialState, action: any) => {
       return state;
   }
 };
+
+export default stackreduce;

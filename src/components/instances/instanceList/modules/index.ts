@@ -1,4 +1,5 @@
 import reducer from "./reducers";
 import { key } from "./constants";
 
-export default { [key]: reducer };
+const instate = { [key]: reducer };
+export default instate;

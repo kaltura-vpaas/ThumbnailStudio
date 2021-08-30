@@ -3,7 +3,7 @@ import constants from "./constants";
 
 const initialState = {};
 
-export default (state = initialState, action: any) => {
+const propred = (state = initialState, action: any) => {
   switch (action.type) {
     case constants.SET_INSTANCE_PROPERTY:
       return {
@@ -21,3 +21,5 @@ export default (state = initialState, action: any) => {
       return state;
   }
 };
+
+export default propred;

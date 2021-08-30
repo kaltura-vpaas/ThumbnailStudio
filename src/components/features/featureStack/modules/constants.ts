@@ -1,6 +1,6 @@
 export const key = "featureStack";
 
-export default {
+const stackstate =  {
   SET_LIST: `${key}.SET_LIST`,
 
   ADD_FEATURE: `${key}.ADD_FEATURE`,
@@ -9,3 +9,5 @@ export default {
   SET_SELECTED_FEATURE: `${key}.SET_SELECTED_FEATURE`,
   CLEAR_SELECTED_FEATURE: `${key}.CLEAR_SELECTED_FEATURE`
 };
+
+export default stackstate;

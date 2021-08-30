@@ -1,4 +1,5 @@
 import reducer from "./reducers";
 import { key } from "./constants";
 
-export default { [key]: reducer };
+const featuredex = { [key]: reducer };
+export default featuredex;

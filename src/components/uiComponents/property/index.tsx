@@ -28,7 +28,7 @@ class Property extends Component<Props> {
     return (
       <div className="property">
         <span className="property-label">{label}
-          <a href="#" className="tooltip" title={description}></a>
+          <a href="/#" className="tooltip" title={description}> </a>
         </span>
 
         <PropertyComponent

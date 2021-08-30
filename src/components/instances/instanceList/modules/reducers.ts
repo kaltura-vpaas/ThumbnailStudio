@@ -11,7 +11,7 @@ const initialState: State = {
   instanceList: []
 };
 
-export default (state: State = initialState, action: any) => {
+const redstate = (state: State = initialState, action: any) => {
   switch (action.type) {
     case constants.SET_SELECTED_INSTANCE:
       return {
@@ -39,3 +39,5 @@ export default (state: State = initialState, action: any) => {
       return state;
   }
 };
+
+export default redstate;
