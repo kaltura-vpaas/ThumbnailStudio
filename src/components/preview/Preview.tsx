@@ -6,7 +6,7 @@ import "./styles.scss";
 
 const responseTypes = {
   json: "application/json",
-  image: "image/jpeg"
+  images: [ "image/jpeg","image/png","image/bmp","image/gif"]
 };
 
 interface Props {
@@ -86,7 +86,7 @@ class Preview extends Component<Props> {
     }
     const responseType = get(blob, "type");
     let preview = null;
-    if (responseType === responseTypes.image) {
+    if (responseTypes.images.includes(responseType!)) {
       preview = this.renderPreviewImage(blob);
     }
     if (responseType === responseTypes.json) {
@@ -98,12 +98,12 @@ class Preview extends Component<Props> {
         {preview}
         <br/>
         Short:
-        {responseType === responseTypes.image && (
+        {responseTypes.images.includes(responseType!) && (
           <span className="url"><a href={url}>{url}</a></span>
         )}
         <br/>
         Long:
-        {responseType === responseTypes.image && (
+        {responseTypes.images.includes(responseType!) && (
           <span className="url"><a href={longUrl}>{longUrl}</a></span>
         )}
         

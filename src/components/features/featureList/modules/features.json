@@ -560,7 +560,7 @@
         ]
     },
     {
-        "id": 4,
+        "id": 8,
         "name": "composite",
         "label": "Composite",
         "alias": "comp",
@@ -615,6 +615,43 @@
                 "type": "int",
                 "required": false,
                 "defaultValue": 134217727
+            }
+        ]
+    },
+    {
+        "id": 9,
+        "name": "output",
+        "label": "Output",
+        "alias": "o",
+        "descripton": "Modify the image output parameters",
+        "props": [
+            {
+                "id": 1,
+                "name": "format",
+                "label": "Format",
+                "description": "the image format",
+                "alias": "f",
+                "type": "select",
+                "required": false,
+                "defaultValue": "",
+                "props": {
+                    "options": [
+                        "JPEG",
+                        "PNG",
+                        "BMP",
+                        "GIF"
+                    ]
+                }
+            },
+            {
+                "id": 2,
+                "name": "quality",
+                "label": "Quality",
+                "description": "the image compression quality",
+                "alias": "q",
+                "type": "int",
+                "required": false,
+                "defaultValue": "75"
             }
         ]
     }
