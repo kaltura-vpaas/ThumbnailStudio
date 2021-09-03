@@ -10,7 +10,7 @@ interface Props {
   partnerId: any;
 }
 
-const AppConfig: FC<Props> = ({ setKS, ks, setPartnerId, partnerId }) => {
+const AppConfig: FC<Props> = ({ setKS, ks, setPartnerId, partnerId}) => {
   const isKsEmpty: boolean = isEmpty(ks);
   return (
     <div className="app-config">

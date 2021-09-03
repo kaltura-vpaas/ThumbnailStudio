@@ -1,7 +1,17 @@
 import omit from "lodash/omit";
 import constants from "./constants";
+const sourceActions = require("../../instanceList/modules/sourceActions.json"); // eslint-disable-line
 
-const initialState = {};
+const initialState={
+  sbsqi5: {
+    id: "sbsqi5",
+    entryId: "0_60gyd613",
+    sourceAction: sourceActions[0],
+    props: sourceActions
+  }
+}
+
+const xinitialState = {}
 
 const propred = (state = initialState, action: any) => {
   switch (action.type) {

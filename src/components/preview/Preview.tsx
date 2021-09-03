@@ -36,6 +36,10 @@ class Preview extends Component<Props> {
     }
   }
 
+  componentDidMount() {
+    this.fetchImageData();
+  }
+
   fetchImageData = async () => {
     fetch(`${this.state.url}?format=1`) // ?format=1 for set Content-type: application/json
       .then(response => response.blob())

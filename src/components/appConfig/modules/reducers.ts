@@ -6,7 +6,7 @@ import constants from "./constants";
 
 const initialState = {
   ks: "",
-  partnerId: ""
+  partnerId: "2421271"
 };
 
  const redstate = (state = initialState, action: any) => {

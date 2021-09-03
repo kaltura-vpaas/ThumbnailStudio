@@ -1,14 +1,24 @@
 import constants from "./constants";
 import Instance from "./models";
+const sourceActions = require("./sourceActions.json"); // eslint-disable-line
 
 export interface State {
   instanceList: Instance[];
   selectedInstance: Instance | null;
 }
 
+const initInstance = {
+  id: "sbsqi5",
+  entryId: "0_60gyd613",
+  sourceAction: null,
+  props: sourceActions
+};
+
 const initialState: State = {
-  selectedInstance: null,
-  instanceList: []
+  selectedInstance: initInstance,
+  instanceList: [
+    initInstance
+    ]
 };
 
 const redstate = (state: State = initialState, action: any) => {
